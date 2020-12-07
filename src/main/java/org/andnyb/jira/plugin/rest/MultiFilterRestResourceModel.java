@@ -111,14 +111,12 @@ public class MultiFilterRestResourceModel {
       Query query = jqlClauseBuilder.savedFilter(filterId).buildQuery();
       PagerFilter pagerFilter = PagerFilter.getUnlimitedFilter();
       searchService = ComponentAccessor.getComponent(SearchService.class);
-      SearchResults searchResults = null;
+      List<Issue> searchResults = null;
 
       ArrayList<Issue> issues = new ArrayList<Issue>();
       try {
-         searchResults = searchService.search(user, query, pagerFilter);
-         for (Issue issue : searchResults.getIssues()) {
-            issues.add(issue);
-         }
+         searchResults = searchService.search(user, query, pagerFilter).getResults();
+         issues.addAll(searchResults);
       } catch (Exception e) {
          // void
       }
