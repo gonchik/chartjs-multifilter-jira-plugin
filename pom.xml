@@ -188,7 +188,7 @@
         </plugins>
     </build>
     <properties>
-        <jira.version>7.2.2</jira.version>
+        <jira.version>8.5.0</jira.version>
         <!--jira.version>6.3.8</jira.version-->
         <amps.version>6.2.11</amps.version>
         <plugin.testrunner.version>1.2.3</plugin.testrunner.version>
@@ -197,5 +197,7 @@
         <atlassian.plugin.key>${project.groupId}.${project.artifactId}</atlassian.plugin.key>
         <!-- TestKit version 6.x for JIRA 6.x -->
         <testkit.version>6.3.11</testkit.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 </project>
